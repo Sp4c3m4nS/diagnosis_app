@@ -13,7 +13,9 @@ def diagnosis_prediction():
     image_path = "./images/" + imagefile.filename
     imagefile.save(image_path)
 
-    classification, scholar1, scholar2, scholar3 = predict(image_path)
+    scan = request.form["scan"] 
+
+    classification, scholar1, scholar2, scholar3 = predict(image_path, scan)
 
     return render_template("index.html", prediction=classification, scholar1=scholar1, scholar2=scholar2, scholar3=scholar3)
 

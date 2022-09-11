@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Diagnosis Prediction</title>
+      <title>The AI Clinic</title>
       <link rel="stylesheet" type="text/css" href="/static/styles/index.css">
     </head>
 
     <body>
-      <div class="header">
-        <h1>Image Classifier</h1>
+      <div class="h1">
+        <h1>The AI Clinic</h1>
       </div>
       
       <!-- Animated Background -->
@@ -30,12 +30,12 @@
       <form action="/", method="post" enctype="multipart/form-data">
         <div class="file-upload">
           <div class="animated-background-wrap">
-            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add an xray, MRI, or photo</button>
           </div>
             <div class="image-upload-wrap">
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" type="file" name="imagefile"/>
             <div class="drag-text">
-              <h3>Drag and drop a file or select add Image</h3>
+              <h3>Drag and drop a file or add above</h3>
             </div>
           </div>
 
@@ -45,7 +45,19 @@
               <div class="image-title-wrap">
                 <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
               </div>
+              <p>What do you wish to scan for?</p>
+              <form>
+                <input type="radio" id="brain_tumor" name="scan" value="brain_tumor">
+                <label for="brain_tumor">Brain Tumor</label><br>
+                <input type="radio" id="alzheimers" name="scan" value="alzheimers">
+                <label for="alzheimers">Alzheimers</label><br>
+                <input type="radio" id="lung_pneumonia" name="scan" value="lung_pneumonia">
+                <label for="lung_pneumonia">Lung Pneumonia</label><br>
+                <input type="radio" id="monkeypox" name="scan" value="monkeypox">
+                <label for="monkeypox">Monkeypox</label><br>
+              </form>
               <div class="image-title-wrap">
+                <br>
                 <input class="predict-image" type="submit" value="Predict">
               </div>
             </div>
@@ -64,7 +76,7 @@
           {% endif %}</p>
         </div>
         
-        <p>{% if prediction %}
+        <p>{% if scholar1 %}
           <div class="header">
             <br>
             <h4>Here are some references:</h4>
