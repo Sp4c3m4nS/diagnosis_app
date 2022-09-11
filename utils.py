@@ -30,5 +30,13 @@ def predict(directory_p):
     search = GoogleSearch(params)
     results = search.get_dict()
     organic_results = results["organic_results"]
+    final_results = []
+    for i in range(3):
+        final_results.append(organic_results[i]["title"])
+        final_results.append(organic_results[i]["link"])
 
-    return prediction, organic_results
+    scholar1 = 'Title: ' + final_results[0] + ' URL: ' + final_results[1]
+    scholar2 = 'Title: ' + final_results[2] + ' URL: ' + final_results[3]
+    scholar3 = 'Title: ' + final_results[4] + ' URL: ' + final_results[5]
+
+    return (prediction, scholar1, scholar2, scholar3)

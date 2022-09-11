@@ -58,13 +58,34 @@
 
 
       <div class="predict">
-        <p>{% if prediction %}
-        {{prediction}}
-        {% endif %}</p>
-
-        <p>{% if scholar %}
-          {{scholar}}
+        <div class="animated-background-wrap">
+          <p>{% if prediction %}
+          {{prediction}}
           {% endif %}</p>
+        </div>
+        
+        <p>{% if prediction %}
+          <div class="header">
+            <br>
+            <h4>Here are some references:</h4>
+          </div>
+          {% endif %}</p>
+
+        <div class="animated-background-wrap">
+        
+            <p>{% if scholar1 %}
+              {{scholar1}}
+              {% endif %}</p>
+
+            <p>{% if scholar2 %}
+              {{scholar2}}
+              {% endif %}</p>
+
+            <p>{% if scholar3 %}
+              {{scholar3}}
+              {% endif %}</p>
+
+        </div>
       </div>
     </body>
 </html>
