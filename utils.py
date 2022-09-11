@@ -31,4 +31,4 @@ def predict(directory_p):
     results = search.get_dict()
     organic_results = results["organic_results"]
 
-    return prediction, organi
+    return prediction, organic_results
