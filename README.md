@@ -1,6 +1,4 @@
-# Diagnosis App
-
-1. Setting the App
+# 1. Setting the App
 
 First, clone the repository.
 ```
@@ -11,7 +9,7 @@ Then, remember to have all the requirements installed, for this run the bellow c
 python3 -m pip install -r requirements.txt
 ```
 
-2. Running
+# 2. Running
 
 Check in the utils.py for the port chosen, after that just run the program.
 ```
