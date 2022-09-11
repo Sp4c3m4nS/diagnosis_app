@@ -9,8 +9,7 @@ def predict(directory_p):
     img_width=180
     
     model = tf.keras.models.load_model(model_path)
-    img = tf.keras.utils.load_img(
-        directory_p, target_size=(img_height, img_width))
+    img = tf.keras.utils.load_img(directory_p, target_size=(img_height, img_width))
 
     img_array = tf.keras.utils.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0) # Create a batch
@@ -32,4 +31,4 @@ def predict(directory_p):
     results = search.get_dict()
     organic_results = results["organic_results"]
 
-    return prediction, organic_results
+    return prediction, organi

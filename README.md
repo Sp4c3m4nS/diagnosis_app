@@ -11,7 +11,12 @@ python3 -m pip install -r requirements.txt
 
 # 2. Running
 
-Check in the utils.py for the port chosen, after that just run the program.
+Check in the utils.py for the port chosen, after that just run the program with flask.
+```
+flask --app diagnosis_app run
+```
+
+If it does not work, use python to run it.
 ```
 python3 diagnosis_app.py
 ```
