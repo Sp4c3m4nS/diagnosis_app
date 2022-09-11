@@ -19,6 +19,6 @@ def predict(directory_p):
     class_label=np.argmax(score)
 
     brain_tumor = {0:"Glioma Tumor", 1:"Meningioma Tumor", 2:"Not a Tumor", 3:"Pituitary Tumor"}
-    prediction = "This image most likely belongs to {} with a {:.2f} percent confidence.".format(brain_tumor[class_label], 100 * np.max(score))
+    prediction = "This image was detected as: {}".format(brain_tumor[class_label])
 
     return prediction
