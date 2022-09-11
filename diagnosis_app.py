@@ -13,9 +13,9 @@ def diagnosis_prediction():
     image_path = "./images/" + imagefile.filename
     imagefile.save(image_path)
 
-    classification = predict(image_path)
+    classification, scholar_results = predict(image_path)
 
-    return render_template("index.html", prediction=classification)
+    return render_template("index.html", prediction=classification, scholar=scholar_results)
 
 if __name__ == '__main__':
     app.run(port=4444, debug=True)
