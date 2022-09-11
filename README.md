@@ -1,5 +1,3 @@
-# Diagnosis App
-
 # 1. Setting the App
 
 First, clone the repository.
