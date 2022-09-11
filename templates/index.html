@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Diagnosis Prediction</title>
@@ -7,15 +7,46 @@
     </head>
 
     <body>
-      <div class="hero">
-        <h1 class="p-3 text-center">Image Classifier</h1>
-        <form class="p-3 text-center" action="/", method="post" enctype="multipart/form-data">
-          <input class="form-control" type="file" name="imagefile" >
-          <input class="btn btn-primary mt-3" type="submit" value="Predict Image">
+      <div class="header">
+        <h1>Image Classifier</h1>
+      </div>
 
-        {% if prediction %}
-          <p class="text-center">Prediction: {{prediction}}</p>
-        {% endif %}
+      <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <form action="/", method="post" enctype="multipart/form-data">
+        <div class="file-upload">
+          <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+          
+          <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" type="file" name="imagefile"/>
+            <div class="drag-text">
+              <h3>Drag and drop a file or select add Image</h3>
+            </div>
+          </div>
+
+          <div class="file-upload-content">
+            <img class="file-upload-image" src="#" alt="your image" name="imagefile"/>
+            <div class="image-title-wrap">
+              <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+            </div>
+            <input class="btn btn-primary mt-3" type="submit" value="Predict Image">
+          </div>
+        </div>
+      </form>
+
+
+      <!-- partial -->
+      <!--
+        <form action="/", method="post" enctype="multipart/form-data">
+        <input class="form-control" type="file" name="imagefile" >
+        <input class="btn btn-primary mt-3" type="submit" value="Predict Image">
+        -->
+        <script  src="/static/styles/script.js"></script>
+
+
+      <div class="predict">
+        <p>{% if prediction %}
+        Prediction: {{prediction}}
+        {% endif %}</p>
       </div>
     </body>
 </html>
