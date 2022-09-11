@@ -4,8 +4,8 @@ import numpy as np
 def predict(directory_p):
 
     model_path = 'models/brain_tumor.h5'
-    img_height=224
-    img_width=224
+    img_height=180
+    img_width=180
     
     model = tf.keras.models.load_model(model_path)
     img = tf.keras.utils.load_img(
